@@ -11,6 +11,9 @@ public class Rocket : MonoBehaviour
     [SerializeField] float thrust = 100f;
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float levelDelay = 1f;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip levelLoad;
 
     enum State {  Alive, Dying, Transcending }
     State state = State.Alive;
@@ -25,21 +28,18 @@ public class Rocket : MonoBehaviour
     void Update()
     {
         Move();
-        
     }
 
     private void Move()
-    {
-        
+    { 
         if(state!= State.Dying)
         {
-            Thrust();
-            Rotate();
+            RespondToThrustInput();
+            RespondToRotateInput();
         }
-        
     }
 
-    private void Rotate()
+    private void RespondToRotateInput()
     {
         rb.freezeRotation = true;
         float rotSframe = rotationSpeed * Time.deltaTime;
@@ -69,15 +69,29 @@ public class Rocket : MonoBehaviour
                 Debug.Log("fuel");
                 break;
             case "LandingPad":
-                state = State.Transcending;
-                Invoke("LoadNextScene", levelDelay);
+                StartNextLevel();
                 break;
             default:
-                state = State.Dying;
-                Invoke("LoadFirstScene", levelDelay);
+                StartDeathSequence();
                 break;
 
         }
+    }
+
+    private void StartDeathSequence()
+    {
+        state = State.Dying;
+        audio.Stop();
+        audio.PlayOneShot(deathSound);
+        Invoke(nameof(LoadFirstScene), levelDelay);
+    }
+
+    private void StartNextLevel()
+    {
+        state = State.Transcending;
+        audio.Stop();
+        audio.PlayOneShot(levelLoad);
+        Invoke(nameof(LoadNextScene), levelDelay);
     }
 
     private void LoadFirstScene()
@@ -90,20 +104,25 @@ public class Rocket : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    private void Thrust()
+    private void RespondToThrustInput()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            float thrustFrame = thrust * Time.deltaTime;
-            rb.AddRelativeForce(Vector3.up * thrustFrame);
-            if (!audio.isPlaying)
-            {
-                audio.Play();
-            }
+            ApplyThrust();
         }
         else
         {
             audio.Stop();
+        }
+    }
+
+    private void ApplyThrust()
+    {
+        float thrustFrame = thrust * Time.deltaTime;
+        rb.AddRelativeForce(Vector3.up * thrustFrame);
+        if (!audio.isPlaying)
+        {
+            audio.PlayOneShot(mainEngine);
         }
     }
 }
