@@ -214,7 +214,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.535002}
---- !u!21 &129198226
+--- !u!21 &147268155
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -248,6 +248,18 @@ Material:
     - _Smoothness: 0.5
     m_Colors:
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
+--- !u!198 &407006759 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9104626984677638419, guid: 5790242788e438c41be3b99145ea1f4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8999856221553396150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &597814614 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9089886542209539244, guid: 5790242788e438c41be3b99145ea1f4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8999856221553396150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8407501230184789905, guid: adf977823f05a904fbe2d63ed3dff792,
@@ -347,6 +359,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.728}
+--- !u!21 &844668431
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clayxels/ClayxelBuiltInShader
+  m_Shader: {fileID: 4800000, guid: 8d3e2d0573fa71447be9cc6d6c1d49b6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1aa3096b1b9d9204eaa6c75a4275adb1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ClayxelSize: 1
+    - _Cutoff: 0.95
+    - _Metallic: 0
+    - _NormalOrient: 1
+    - _RoughBump: 0
+    - _RoughColor: 0
+    - _RoughOrient: 0
+    - _Smoothness: 0.5
+    m_Colors:
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &897398125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3462367232103066253, guid: f85430b696d9398468f63bb9dae6e247,
+    type: 3}
+  m_PrefabInstance: {fileID: 3462367233132794239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &897398126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897398125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37803b197a20dc745a06eff82cc56c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0, z: 10}
+  movementFactor: 0
 --- !u!1 &1024447484
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +692,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.634}
+--- !u!198 &1097069100 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9089465172061468416, guid: 5790242788e438c41be3b99145ea1f4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8999856221553396150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204266370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2250008587269908187, guid: 7ca1eebde80da614aa416fefe877004f,
@@ -1012,40 +1084,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.170002}
---- !u!21 &1897155854
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Clayxels/ClayxelBuiltInShader
-  m_Shader: {fileID: 4800000, guid: 8d3e2d0573fa71447be9cc6d6c1d49b6, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1aa3096b1b9d9204eaa6c75a4275adb1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ClayxelSize: 1
-    - _Cutoff: 0.95
-    - _Metallic: 0
-    - _NormalOrient: 1
-    - _RoughBump: 0
-    - _RoughColor: 0
-    - _RoughOrient: 0
-    - _Smoothness: 0.5
-    m_Colors:
-    - _Emission: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1913281415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 3462367232103066249, guid: f85430b696d9398468f63bb9dae6e247,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.21
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3462367232103066249, guid: f85430b696d9398468f63bb9dae6e247,
         type: 3}
@@ -1649,21 +1687,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8999856220082228126, guid: 5790242788e438c41be3b99145ea1f4c,
+    - target: {fileID: 8999856221667997545, guid: 5790242788e438c41be3b99145ea1f4c,
         type: 3}
-      propertyPath: color.r
-      value: 0.7264151
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856220082228126, guid: 5790242788e438c41be3b99145ea1f4c,
+      propertyPath: mainEngineParticles
+      value: 
+      objectReference: {fileID: 407006759}
+    - target: {fileID: 8999856221667997545, guid: 5790242788e438c41be3b99145ea1f4c,
         type: 3}
-      propertyPath: color.g
-      value: 0.7264151
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856220082228126, guid: 5790242788e438c41be3b99145ea1f4c,
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 597814614}
+    - target: {fileID: 8999856221667997545, guid: 5790242788e438c41be3b99145ea1f4c,
         type: 3}
-      propertyPath: color.b
-      value: 0.7264151
-      objectReference: {fileID: 0}
+      propertyPath: succesParticles
+      value: 
+      objectReference: {fileID: 1097069100}
     - target: {fileID: 8999856221667997546, guid: 5790242788e438c41be3b99145ea1f4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1728,36 +1766,6 @@ PrefabInstance:
         type: 3}
       propertyPath: material
       value: 
-      objectReference: {fileID: 1897155854}
-    - target: {fileID: 8999856221692032325, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.r
-      value: 0.9433962
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856221692032325, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.g
-      value: 0.91224635
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856221692032325, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.b
-      value: 0.91224635
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856222102988844, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.r
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856222102988844, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.g
-      value: 0.990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999856222102988844, guid: 5790242788e438c41be3b99145ea1f4c,
-        type: 3}
-      propertyPath: color.b
-      value: 0.990566
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 147268155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5790242788e438c41be3b99145ea1f4c, type: 3}
