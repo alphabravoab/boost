@@ -18,7 +18,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem succesParticles;
     [SerializeField] ParticleSystem deathParticles;
-
+    [SerializeField] Scene currentScene;
     enum State {  Alive, Dying, Transcending }
     State state = State.Alive;
     // Start is called before the first frame update
@@ -31,6 +31,8 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         Move();
     }
 
@@ -45,7 +47,7 @@ public class Rocket : MonoBehaviour
 
     private void RespondToRotateInput()
     {
-        rb.freezeRotation = true;
+        rb.angularVelocity = Vector3.zero;
         float rotSframe = rotationSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
@@ -56,7 +58,6 @@ public class Rocket : MonoBehaviour
             transform.Rotate(-Vector3.forward * rotSframe);
         }
 
-        rb.freezeRotation = false;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -107,7 +108,17 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        currentScene = SceneManager.GetActiveScene();
+        int nextLevel = currentScene.buildIndex + 1;
+        int sceneIndex = SceneManager.sceneCountInBuildSettings;
+        if (nextLevel ==  sceneIndex)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 
     private void RespondToThrustInput()
